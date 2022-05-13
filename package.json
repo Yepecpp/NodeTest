@@ -1,0 +1,24 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cls && nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Y3P3/NodeTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Y3P3/NodeTest/issues"
+  },
+  "homepage": "https://github.com/Y3P3/NodeTest#readme",
+  "dependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
