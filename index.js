@@ -5,6 +5,7 @@ const path = require('path');
 const Port = process.env.PORT || 8080;
 const mysql = require('mysql2');
 const { json } = require('express/lib/response');
+const ServerLocation = 'http://localhost:'+Port;
 //#endregion
 // mysql conection
 const conection = mysql.createConnection({
@@ -23,12 +24,14 @@ conection.connect((err)=>{
 }); 
 //Routes
 app.listen(Port, () => {
-    console.log(`Server is running on http://localhost:${Port}`);
+    console.log(`Server is running on ${ServerLocation}`);
 });
 //app use templates
 app.use(express.static(path.join(__dirname, '/Templates')));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, '/Templates'));
 app.get('/', (req, res)=> {
-  console.log('Peticion en /root '+req.ip);
+  console.log('Peticion en /');
   res.sendFile(path.join(__dirname + '/Templates/Index.html'));
 });
 app.get('/users/:id', (req, res)=> {
@@ -37,7 +40,8 @@ app.get('/users/:id', (req, res)=> {
   console.log(req.params.id); console.log(query);
   conection.query(query,(err,rows)=>{
     if (err) console.log(err);
-    res.send(rows);
+    res.render('404.ejs',{current: ServerLocation+req.url, base: rows}); 
+  //  res.send(rows);
   });
 }
 ); 
@@ -74,5 +78,6 @@ app.post('/users', (req, res)=> {
 //default 404 page
 app.use( (req, res) => {
   console.log('Peticion en 404');
-  res.status(404).send('404 not found')}  // 404 not found  when the page request doesnt exist
-);
+  console.log(req.url);
+  res.status(404).render('404.ejs',{current: ServerLocation+req.url}); 
+}) // 404 not found  when the page request doesnt exist

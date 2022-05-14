@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 page not found</title>
+</head>
+<body>
+<div id="centered">
+    <h1 id="head">404</h1>
+        <p id="PT">Page not found</p>
+    <h1><a href="./" id="LinP">Return Home</a></h1>   
+</div>
+<% for( let index = 0; index < base.length; index++ ) { %>
+    <h1>
+        <%= base[index].Email%>
+    </h1>
+        <% } %>
+<div>
+    <h2 id="pwd">
+        <%-current%> doesn't exist in this server.
+    </h2>
+</div>
+<link rel="stylesheet" href="css/404.css">
+</body>
+</html>

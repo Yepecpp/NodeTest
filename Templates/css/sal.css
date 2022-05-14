@@ -15,5 +15,9 @@
     border-radius: 5px;
 }
 #btn:hover {
-    background-color: rgb(173, 97, 97);
+    background-color: rgb(23, 96, 156);
+}
+/* color the buton black on pressed*/
+#btn:active {
+    background-color: black;
 }

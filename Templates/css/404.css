@@ -1,0 +1,32 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#centered{
+    text-align: center;
+    position: center;
+
+}
+#head{
+    color: black;
+    text-align: left;
+    padding: 5px;
+    margin: 0px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: #fff;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ff0000;
+    border: 1px solid #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
