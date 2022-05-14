@@ -23,20 +23,7 @@ app.get('/', (request, response)=> {
 });
 
 // conect to mysql
-const conection = mysql.createConnection({
-  user:'gregory',
-  password:'elso',
-  host:'localhost',
-  database:'test'
-});
-// test conection
-conection.connect((err)=>{ 
-if (err) {
-console.log('error en la conexion');
-return;
-}
-console.log('conectado');
-}); 
+
 app.get('/Users',(request,response)=>{
   console.log('peticion en /users');
   conection.query('SELECT * FROM users',(err,rows)=>{

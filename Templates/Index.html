@@ -13,7 +13,20 @@
     <p>I like this website</p>
     <h3>or</h3>
     <p>I don't like this website</p>
-    <p>Thanks for visi</p>
+    <p>Thanks for visiting</p>
+    <button id="btn">Click Me</button>
+    <script>
+        var btn = document.getElementById('btn');
+        btn.onclick = ()=>{
+fetch("http://localhost:8080/users/0", {
+  "method": "GET"
+}).then(response => {
+    console.log(response.json().Id);}).catch(err => {
+  console.error(err);
+});
+        }    
+  
+    </script>
     <link rel="stylesheet" href="css/sal.css">
 </body>
 </html>
